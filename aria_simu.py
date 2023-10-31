@@ -21,8 +21,8 @@ final = np.zeros(10, dtype = float) #liste qui contiendra l'argent en $ par entr
 company = [appl, sbux, msft, csco, qcom, meta, amzn, tsla, amd, nflx]
 
 for i in range (len(company)):
+    company[i]['Date'] = pd.to_datetime(company[i].["Date"])
     company[i].set_index('Date', inplace=True)
-    company[i]['Date'] = pd.to_datetime(company[i].Date)
     rapport = company[i].loc["2023-10-30", "Open"]/company[i].loc["2010-01-01", "Open"]
     final[i] = invest[i] * rapport
 
