@@ -13,7 +13,8 @@ tsla= pd.read_csv('tesla_doc.csv')
 amd = pd.read_csv('amd_doc.csv')
 nflx = pd.read_csv('netflix_doc.csv')
 
-nfl
+appl['Date'] = pd.to_datetime(appl["Date"])
+appl.loc["2023-02-02"]
 
 # +
 invest = np.array([10,10,10,10,10,10,10,10,10,10],dtype = float)   #liste contenant les investissements initiaux en $ pour [appl, sbux, msft, csco, qcom, meta, amzn, tsla, amd, nflx]
@@ -21,9 +22,9 @@ final = np.zeros(10, dtype = float) #liste qui contiendra l'argent en $ par entr
 company = [appl, sbux, msft, csco, qcom, meta, amzn, tsla, amd, nflx]
 
 for i in range (len(company)):
-    company[i]['Date'] = pd.to_datetime(company[i].["Date"])
+    company[i]['Date'] = pd.to_datetime(company[i]["Date"])
     company[i].set_index('Date', inplace=True)
-    rapport = company[i].loc["2023-10-30", "Open"]/company[i].loc["2010-01-01", "Open"]
+    rapport = company[i].iloc["2023-10-30", 5]/company[i].loc["2010-01-01", 5]
     final[i] = invest[i] * rapport
 
 print(final)
@@ -32,4 +33,4 @@ print(final)
 
 # -
 
-           
+
