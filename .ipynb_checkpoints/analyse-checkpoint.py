@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ### Apple
 
 import pandas as pd
@@ -66,3 +67,6 @@ df_apple["Croissance%"]=100*df_apple["Moyenne"].pct_change(periods=1)
 df_apple
 
 (df_apple.tail(50))[['Croissance%']].plot()
+=======
+print("hello world")
+>>>>>>> 66b9761692c896b6b474c453e3bf161e8d212e72
