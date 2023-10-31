@@ -46,7 +46,7 @@ df_apple['Début']=df_apple['Début'].astype("float64")
 df_apple['Fin']=df_apple['Fin'].astype("float64")
 df_apple.dtypes
 
-# %matplotlib ipympl
+
 
 plt.style.use('seaborn-v0_8')
 sns.set(rc={'figure.figsize': (8, 4)})
