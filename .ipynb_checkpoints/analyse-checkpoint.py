@@ -136,4 +136,30 @@ df
 
 # On a donc étudié les variations de la moyenne du prix de l'action depuis 100 jours
 
+sns.displot(data=df.head(100), x="Moyenne",kind="kde")
+
+# J'ai tracé une distribution de la 
+# moyenne des actions lors des 100 derniers jours. Je vais la trace pour les 5 derniers années pour comparer les deux distributions
+
+sns.displot(data=df.head(1500), x="Moyenne",kind="kde")
+
+# La distribution est différente et elle est plus décalée vers la gauche ce qui est cohérent avec le graphe qui montre la hausse du prix de l'action.
+
+# ### On va maintenant comparer les deux entreprises
+
+
+
+df_tot=pd.merge(df_apple,df,on='Date')
+
+df_tot.head()
+
+df_tot.rename(columns={"Volume":"vol_apple","nb actions":"vol_microsoft","Moyenne_x":"moyenne_apple","Moyenne_y":"moyenne_microsoft"},inplace= True)
+df_tot[["vol_apple","vol_microsoft"]].plot()
+
+# Apple vend plus d'actions que microsoft mais la différence de vente d'actions diminue au cours du temps
+
+df_tot[["moyenne_apple","moyenne_microsoft"]].plot()
+
+# Cependant, le prix moyen des actions de microsoft est plus élevé que celui d'apple et la différence du prix moyen augment au cours du temps 
+
 
